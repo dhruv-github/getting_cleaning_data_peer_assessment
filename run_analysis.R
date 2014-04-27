@@ -1,11 +1,11 @@
 ### 4/25/14 ###
 
-features <-  read.table("features.txt")
-activity <- read.table("activity_labels.txt")
+features <-  read.table("features.txt")  ### read in the 561 features
+activity <- read.table("activity_labels.txt")  ### read in the 6 activities
 
 train <- read.table("train/X_train.txt")
 colnames(train) <- features$V2
-train <- train[which(grepl("mean|std",colnames(train),ignore.case=T))]
+train <- train[which(grepl("mean|std",colnames(train),ignore.case=T))]   ### identify columns on mean/sd for each measurement
 train.subject <- read.table("train/subject_train.txt")
 train.activity <- read.table("train/y_train.txt")
 train.activity.labeled <- merge(train.activity,activity,sort=F)
