@@ -1,4 +1,4 @@
-### 4/27/14 ###
+### 6/19/15 ###
 
 There are 30 subjects used in the analysis, 21 (70%)in the training group and 9 (30%) in the 
 testing group.
@@ -12,3 +12,4 @@ frame with the subject info, the activity info and the mean and sd measurements.
 
 I do a row bind (rbind) of the testing and the training data obtained above. 
 To compute the average of each variable for each subject and activity , I use the aggregate function.
+I use the plyr package to arrange the result by subject and activity.
