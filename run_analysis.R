@@ -1,4 +1,5 @@
 ### 4/25/14 ###
+### edited 6/19/15 ### 
 
 features <-  read.table("features.txt")  ### read in the 561 features
 activity <- read.table("activity_labels.txt")  ### read in the 6 activities
@@ -25,10 +26,11 @@ test.data <- data.frame(subject=test.subject$V1,activity=test.activity.labeled$V
 total = rbind(train.data,test.data)
 
 
-
 ### 5)
 result = aggregate(total[,-c(1:2)],list(total$subject,total$activity),mean)
 colnames(result)[1:2]=c("subject","activity")
 library(plyr)
 result=arrange(result,subject,activity)
 write.table(result,file="tidy_data_averages.txt",quote=F,row.names=F,sep="\t")
+
+
